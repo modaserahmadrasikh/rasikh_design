@@ -8,7 +8,6 @@
 <style>
 
 /* GENERAL */
-
 body{
 margin:0;
 font-family:Arial, sans-serif;
@@ -18,7 +17,6 @@ overflow-x:hidden;
 }
 
 /* TECHNOLOGY BACKGROUND */
-
 #tech-bg{
 position:fixed;
 top:0;
@@ -29,7 +27,6 @@ z-index:-1;
 }
 
 /* NAVBAR */
-
 nav{
 display:flex;
 justify-content:space-between;
@@ -62,7 +59,6 @@ text-decoration:none;
 }
 
 /* HERO */
-
 .hero{
 height:80vh;
 display:flex;
@@ -94,13 +90,11 @@ cursor:pointer;
 }
 
 /* SECTIONS */
-
 section{
 padding:80px 8%;
 }
 
 /* PORTFOLIO */
-
 .portfolio{
 column-count:3;
 column-gap:15px;
@@ -119,7 +113,6 @@ transform:scale(1.04);
 }
 
 /* LIGHTBOX */
-
 .lightbox{
 position:fixed;
 top:0;
@@ -139,7 +132,6 @@ border-radius:10px;
 }
 
 /* SERVICES */
-
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -154,7 +146,6 @@ text-align:center;
 }
 
 /* CONTACT */
-
 input, textarea{
 width:80%;
 padding:12px;
@@ -164,7 +155,6 @@ border-radius:5px;
 }
 
 /* FOOTER */
-
 footer{
 text-align:center;
 padding:20px;
@@ -173,7 +163,6 @@ margin-top:40px;
 }
 
 /* RESPONSIVE */
-
 @media(max-width:900px){
 .portfolio{
 column-count:2;
@@ -199,141 +188,99 @@ font-size:40px;
 <canvas id="tech-bg"></canvas>
 
 <!-- NAVBAR -->
-
 <nav>
-
 <div class="logo">Rasikh Design</div>
-
 <ul>
 <li><a href="#">Home</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#services">Services</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
-
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
-
 <h1>Creative Graphic Design</h1>
-
 <p>Logos, branding, social media posts and modern visual identity for businesses.</p>
-
 <button class="btn">View Work</button>
-
 </section>
 
 <!-- PORTFOLIO -->
-
 <section id="portfolio">
-
 <h2 style="text-align:center;margin-bottom:40px;">Our Designs</h2>
-
 <div class="portfolio">
-
-<img src="images/Work.jpg" onclick="openImage(this.src)">
+<img src="images/Work1.jpeg" onclick="openImage(this.src)">
 <img src="images/Work2.jpg" onclick="openImage(this.src)">
 <img src="images/Work3.png" onclick="openImage(this.src)">
-<img src="images/Work4.jpg" onclick="openImage(this.src)">
-<img src="images/Work5.jpg" onclick="openImage(this.src)">
-<img src="images/Work6.jpg" onclick="openImage(this.src)">
-<img src="images/Work7.jpg" onclick="openImage(this.src)">
-<img src="images/Work8.jpg" onclick="openImage(this.src)">
+<img src="images/Work4.jpeg" onclick="openImage(this.src)">
+<img src="images/Work5.jpeg" onclick="openImage(this.src)">
+<img src="images/Work6.jpeg" onclick="openImage(this.src)">
+<img src="images/Work7.jpeg" onclick="openImage(this.src)">
+<img src="images/Work8.jpeg" onclick="openImage(this.src)">
 <img src="images/Work9.jpg" onclick="openImage(this.src)">
-<img src="images/Work10.jpg" onclick="openImage(this.src)">
-<img src="images/Work11.jpg" onclick="openImage(this.src)">
-
+<img src="images/Work10.png" onclick="openImage(this.src)">
 </div>
-
 </section>
 
 <!-- SERVICES -->
-
 <section id="services">
-
 <h2 style="text-align:center;margin-bottom:40px;">Services</h2>
-
 <div class="services">
-
 <div class="card">
 <h3>Logo Design</h3>
 <p>Unique and modern logos for your brand.</p>
 </div>
-
 <div class="card">
 <h3>Brand Identity</h3>
 <p>Complete branding solutions.</p>
 </div>
-
 <div class="card">
 <h3>Social Media Design</h3>
 <p>Creative posts and banners.</p>
 </div>
-
 <div class="card">
 <h3>Print Design</h3>
 <p>Flyers, posters and brochures.</p>
 </div>
-
 </div>
-
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
-
 <h2 style="text-align:center">Contact</h2>
-
 <center>
-
 <input type="text" placeholder="Your Name"><br>
 <input type="email" placeholder="Your Email"><br>
 <textarea rows="5" placeholder="Your Message"></textarea><br>
-
 <button class="btn">Send Message</button>
-
 </center>
-
 </section>
 
 <footer>
-
 © 2026 Rasikh Design
-
 </footer>
 
 <!-- LIGHTBOX -->
-
 <div class="lightbox" id="lightbox" onclick="closeImage()">
 <img id="lightbox-img">
 </div>
 
 <script>
-
 /* LIGHTBOX */
-
 function openImage(src){
 document.getElementById("lightbox").style.display="flex";
 document.getElementById("lightbox-img").src=src;
 }
-
 function closeImage(){
 document.getElementById("lightbox").style.display="none";
 }
 
 /* TECHNOLOGY PARTICLE BACKGROUND */
-
 const canvas = document.getElementById("tech-bg");
 const ctx = canvas.getContext("2d");
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 let particles = [];
-
 for(let i=0;i<100;i++){
 particles.push({
 x:Math.random()*canvas.width,
@@ -342,30 +289,21 @@ vx:(Math.random()-0.5),
 vy:(Math.random()-0.5)
 });
 }
-
 function animate(){
-
 ctx.clearRect(0,0,canvas.width,canvas.height);
-
 particles.forEach(p=>{
-
 p.x+=p.vx;
 p.y+=p.vy;
-
 if(p.x<0||p.x>canvas.width) p.vx*=-1;
 if(p.y<0||p.y>canvas.height) p.vy*=-1;
-
 ctx.beginPath();
 ctx.arc(p.x,p.y,2,0,Math.PI*2);
 ctx.fillStyle="#00ffaa";
 ctx.fill();
-
 particles.forEach(p2=>{
-
 let dx=p.x-p2.x;
 let dy=p.y-p2.y;
 let dist=Math.sqrt(dx*dx+dy*dy);
-
 if(dist<120){
 ctx.beginPath();
 ctx.moveTo(p.x,p.y);
@@ -373,17 +311,11 @@ ctx.lineTo(p2.x,p2.y);
 ctx.strokeStyle="rgba(0,255,170,0.2)";
 ctx.stroke();
 }
-
 });
-
 });
-
 requestAnimationFrame(animate);
-
 }
-
 animate();
-
 </script>
 
 </body>
